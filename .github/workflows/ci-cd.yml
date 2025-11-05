@@ -67,7 +67,8 @@ jobs:
 
       - name: Tag and Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/flask-interview-app:latest
+          USERNAME=$(echo "${{ secrets.GHCR_USERNAME }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME=ghcr.io/${USERNAME}/flask-interview-app:latest
           docker tag flask-interview-app $IMAGE_NAME
           docker push $IMAGE_NAME
 
