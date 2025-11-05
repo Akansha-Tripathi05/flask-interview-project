@@ -23,4 +23,4 @@ ENV FLASK_ENV=production
 EXPOSE 5000
 
 # Run the application
-CMD ["flask", "run"]
+CMD ["flask", "run.py"]
